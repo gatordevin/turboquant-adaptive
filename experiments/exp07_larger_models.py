@@ -513,8 +513,8 @@ def run_model_experiment(model_name, device='cuda'):
     print(f"\n  {'─'*65}")
     print(f"  SUMMARY for {model_name}:")
     print(f"  {'─'*65}")
-    best_vanilla = min(r for r in results if r[3] == 'vanilla')
-    best_ours = min([r for r in results if r[3] in ('heuristic', 'measured')], key=lambda x: x[1])
+    best_vanilla = min([r for r in results if r[3] == 'vanilla'], key=lambda x: x[1])
+    best_ours = min([r for r in results if r[3] in ('heuristic', 'measured', 'sink_only')], key=lambda x: x[1])
     improvement = best_vanilla[2] - best_ours[2]
     print(f"  Best vanilla:  {best_vanilla[0]:35s} = {best_vanilla[1]:.2f} ({best_vanilla[2]:+.1f}%)")
     print(f"  Best ours:     {best_ours[0]:35s} = {best_ours[1]:.2f} ({best_ours[2]:+.1f}%)")
