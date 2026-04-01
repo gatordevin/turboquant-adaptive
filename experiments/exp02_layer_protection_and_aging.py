@@ -17,6 +17,10 @@ Based on v2 experiment results, we focus on three ideas with real signal:
    for the most sensitive layers (0, 1, 2).
 """
 
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 import time
 import torch
 import torch.nn.functional as F
@@ -31,7 +35,7 @@ from transformers.cache_utils import DynamicCache, CacheLayerMixin
 from turboquant_gpt2 import (
     TurboQuantizer, TurboQuantLayer, compute_perplexity, make_turboquant_cache
 )
-from turboquant_v2 import HadamardQuantizer
+from experiments.exp01_rotation_and_residual import HadamardQuantizer
 
 
 # ============================================================================

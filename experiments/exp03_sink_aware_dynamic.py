@@ -26,6 +26,10 @@ Key innovations over vanilla TurboQuant:
    in fp16 permanently — they're load-bearing infrastructure.
 """
 
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 import math
 import time
 import torch

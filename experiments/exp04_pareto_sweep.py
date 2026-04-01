@@ -5,6 +5,10 @@ Sweeps (key_bits, value_bits, residual_window) configs on GPT-2,
 measures perplexity, memory, and throughput, then plots Pareto frontiers.
 """
 
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
 import time
 import torch
 import torch.nn.functional as F
